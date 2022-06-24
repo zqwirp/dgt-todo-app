@@ -20,8 +20,8 @@ function App() {
   };
 
   const handleOnChangeCheckTodo = (event, id) => {
-    setTodoList(prevTodo =>
-      prevTodo.map(todo => {
+    setTodoList(prevTodos =>
+      prevTodos.map(todo => {
         if (todo.id === id) {
           return {
             ...todo,
@@ -34,7 +34,11 @@ function App() {
   };
 
   const handleClickRemoveTodo = id => {
-    setTodoList(prevTodo => prevTodo.filter(todo => todo.id !== id));
+    setTodoList(prevTodos => prevTodos.filter(todo => todo.id !== id));
+  };
+
+  const handleClickClearTodos = () => {
+    setTodoList(prevTodos => prevTodos.filter(todo => !todo.isCompleted));
   };
 
   useEffect(() => {
@@ -97,7 +101,9 @@ function App() {
           </div>
           {/* END OF TO DO LIST */}
 
-          <button className='Clear'>clear completed</button>
+          <button onClick={handleClickClearTodos} className='Clear'>
+            clear completed
+          </button>
         </div>
       </main>
     </>
