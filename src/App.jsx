@@ -1,11 +1,22 @@
-import './App.css'
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      App
-    </div>
-  )
+    <>
+      <header>
+        <h1>TODO</h1>
+      </header>
+
+      <main>
+        <div className='Container'>
+          <form>
+            <input type='text' />
+            <button></button>
+          </form>
+        </div>
+      </main>
+    </>
+  );
 }
 
-export default App
+export default App;

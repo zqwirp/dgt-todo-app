@@ -1,2 +1,21 @@
-.App {
+body {
+  background-color: #121212;
+  color: #f1f1f1;
+  letter-spacing: 1.5px;
+}
+
+header {
+  padding: 2.5em 0;
+}
+
+header h1 {
+  max-width: 680px;
+  padding: 0 4vw;
+  margin: 0 auto;
+}
+
+.Container {
+  max-width: 680px;
+  padding: 0 4vw;
+  margin: 0 auto;
 }
