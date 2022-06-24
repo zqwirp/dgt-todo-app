@@ -1,7 +1,16 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #121212;
   color: #f1f1f1;
-  letter-spacing: 1.5px;
+}
+
+ul {
+  padding-right: 1em;
 }
 
 header {
@@ -9,13 +18,76 @@ header {
 }
 
 header h1 {
-  max-width: 680px;
-  padding: 0 4vw;
+  max-width: 400px;
+  padding: 0 20px;
   margin: 0 auto;
+  letter-spacing: 1.5px;
+  color: #ff99ff;
+}
+
+form button {
+  display: none;
+}
+
+.InputGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 4px;
+}
+.InputGroup input {
+  width: 100%;
 }
 
 .Container {
-  max-width: 680px;
-  padding: 0 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  max-width: 400px;
+  padding: 0 20px;
   margin: 0 auto;
+}
+
+.Todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+.Todo:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+.Right {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.Right input {
+  margin-right: 1em;
+}
+.Text {
+  word-wrap: break-word;
+  min-width: 0;
+}
+
+.Left {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.Left button {
+  padding: 0 0.2em;
+  background-color: #ff99ff;
+  border: none;
+  border-radius: 4px;
+  color: #111;
+  cursor: pointer;
+}
+.Left button:hover {
+  background-color: #ffbbff;
+  color: #000;
 }
