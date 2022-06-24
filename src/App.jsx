@@ -33,6 +33,10 @@ function App() {
     );
   };
 
+  const handleClickRemoveTodo = id => {
+    setTodoList(prevTodo => prevTodo.filter(todo => todo.id !== id));
+  };
+
   useEffect(() => {
     console.log(todoList);
   }, [todoList]);
@@ -40,21 +44,29 @@ function App() {
   return (
     <>
       <header>
-        <h1>TODO</h1>
+        <h1>TO DO</h1>
       </header>
 
       <main>
         <div className='Container'>
+          {/* INPUT TO DO */}
           <div className='InputForm'>
             <form onSubmit={handleSubmitTodoList}>
               <div className='InputGroup'>
                 <label htmlFor='input-todo'>Input</label>
-                <input type='text' id='input-todo' ref={inputTodo} />
+                <input
+                  type='text'
+                  id='input-todo'
+                  ref={inputTodo}
+                  maxLength='50'
+                />
               </div>
               <button></button>
             </form>
           </div>
+          {/* END OF INPUT TO DO */}
 
+          {/* TO DO LIST */}
           <div className='TodoList'>
             {todoList.length !== 0 && (
               <>
@@ -74,13 +86,16 @@ function App() {
 
                     <div className='Left'>
                       <button>edit</button>
-                      <button>remove</button>
+                      <button onClick={() => handleClickRemoveTodo(todo.id)}>
+                        remove
+                      </button>
                     </div>
                   </div>
                 ))}
               </>
             )}
           </div>
+          {/* END OF TO DO LIST */}
 
           <button className='Clear'>clear completed</button>
         </div>

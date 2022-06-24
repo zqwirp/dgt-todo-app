@@ -21,7 +21,7 @@ header h1 {
   max-width: 400px;
   padding: 0 20px;
   margin: 0 auto;
-  letter-spacing: 1.5px;
+  letter-spacing: 4px;
   color: #ff99ff;
 }
 
@@ -98,7 +98,7 @@ form button {
   color: #000;
 }
 .Left button:active {
-  box-shadow: 0 0 5px 1px #ff55ff inset;
+  box-shadow: 0 0 2px 1px #aaa inset;
 }
 
 .Clear {
