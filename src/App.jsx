@@ -19,6 +19,20 @@ function App() {
     inputTodo.current.value = "";
   };
 
+  const handleOnChangeCheckTodo = (event, id) => {
+    setTodoList(prevTodo =>
+      prevTodo.map(todo => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            isCompleted: event.target.checked,
+          };
+        }
+        return todo;
+      })
+    );
+  };
+
   useEffect(() => {
     console.log(todoList);
   }, [todoList]);
@@ -47,8 +61,15 @@ function App() {
                 {todoList.map(todo => (
                   <div className='Todo' key={todo.id}>
                     <div className='Right'>
-                      <input type='checkbox' />
-                      <div className='Text'>{todo.text}</div>
+                      <input
+                        type='checkbox'
+                        onChange={event =>
+                          handleOnChangeCheckTodo(event, todo.id)
+                        }
+                      />
+                      <div className={`Text ${todo.isCompleted && "Checked"}`}>
+                        {todo.text}
+                      </div>
                     </div>
 
                     <div className='Left'>
@@ -60,6 +81,8 @@ function App() {
               </>
             )}
           </div>
+
+          <button className='Clear'>clear completed</button>
         </div>
       </main>
     </>

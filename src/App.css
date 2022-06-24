@@ -67,10 +67,16 @@ form button {
 
 .Right input {
   margin-right: 1em;
+  cursor: pointer;
 }
 .Text {
   word-wrap: break-word;
   min-width: 0;
+}
+.Checked {
+  text-decoration: line-through;
+  font-style: italic;
+  color: #999;
 }
 
 .Left {
@@ -90,4 +96,20 @@ form button {
 .Left button:hover {
   background-color: #ffbbff;
   color: #000;
+}
+.Left button:active {
+  box-shadow: 0 0 5px 1px #ff55ff inset;
+}
+
+.Clear {
+  align-self: end;
+  margin-top: -1em;
+  background-color: transparent;
+  color: #ccc;
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
+}
+.Clear:hover {
+  color: #fff;
 }
