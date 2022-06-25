@@ -100,6 +100,9 @@ form button {
 .Left button:active {
   box-shadow: 0 0 2px 1px #aaa inset;
 }
+.Left button.Disabled {
+  background-color: #ff11ff;
+}
 
 .Clear {
   align-self: end;
@@ -112,4 +115,33 @@ form button {
 }
 .Clear:hover {
   color: #fff;
+}
+.Editing {
+  display: flex;
+  gap: 0.5em;
+  width: 100%;
+}
+.Editing input {
+  width: 100%;
+}
+.Editing button {
+  display: revert;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+.Editing button:hover {
+  color: #ddd;
+}
+.Editing input,
+.Editing button {
+  position: relative;
+  z-index: 2;
+}
+.Editing:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: #88888888;
 }
